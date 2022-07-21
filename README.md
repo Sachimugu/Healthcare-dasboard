@@ -6,8 +6,8 @@
 ### Run Locally
 ![](https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black)
 
-1. create a folder 
-2. open terminal in the created folder and run the following code one by one.
+1. Create a folder. 
+2. Open terminal in the created folder and run the following code one by one.
 
 ```bash
 # clone the repo
@@ -25,4 +25,4 @@ conda activate healthCaerDashboard
 #run app
 python app.py
 ```
-Open webbrower go to http://127.0.0.1:8081/
+Go to http://127.0.0.1:8081/ on browser
