@@ -7,10 +7,10 @@ from dash.exceptions import PreventUpdate
 from datetime import date
 import json
 
-df=pd.read_csv('./assets/table.csv')
-df1=pd.read_csv('./assets/state.csv')
-Ownership=pd.read_csv('./assets/Ownership.csv')
-Facility_Level=pd.read_csv('./assets/Facility_Level.csv')
+df=pd.read_csv('Dataset/table.csv')
+df1=pd.read_csv('Dataset/state.csv')
+Ownership=pd.read_csv('Dataset/Ownership.csv')
+Facility_Level=pd.read_csv('Dataset/Facility_Level.csv')
 #------------------------------------------------------------------------------
 #------------------------------------------------------------------------------
 
@@ -35,6 +35,7 @@ map1=px.scatter_mapbox(
     color='State',
     size='Number_of_Doctors',
     width=900,
+    template='plotly_dark',
     opacity=1,
     title='Doctors by States',
     zoom=5,
@@ -80,7 +81,7 @@ bar1.update_layout(
         font =dict(family='Sherif',size=11,color = '#fff'),
 ))
 bar1.update_traces(
-    marker_color=kolor,
+    #marker_color=kolor,
     textposition='outside',
     textfont=dict(size=12, color='#fff' )
     )
@@ -112,7 +113,7 @@ bar2.update_layout(
     yaxis=dict(
     color="#fff",
     tickfont=dict(family='Sherif',size=11,)),
-    title =  dict(text ='Ownership',font =dict(family='Sherif',size=14,color = '#fff'),
+    title =  dict(text ='Facility Level',font =dict(family='Sherif',size=14,color = '#fff'),
 ))
 bar2.update_traces(
      marker_color=[ '#19d3f3','#b3b3b3','red',],
@@ -196,7 +197,7 @@ app = dash.Dash( __name__,
 )
 
 app.layout = dbc.Container([
-    dbc.Row( dbc.Col([html.H2(id='title',children='Distribution of Health Facilities',style={'color':'rgba(179, 179, 179, 1)'})],className='bod',style={'height':'60px',},),),
+    dbc.Row( dbc.Col([html.H2(id='title',children='Health Care Dashboard',style={'color':'#ffffff'})],className='bod',style={'height':'60px',},),),
     dbc.Row([
     dbc.Col([
         dbc.Row([
@@ -251,7 +252,7 @@ app.layout = dbc.Container([
         dbc.Row(dbc.Col(f'Date: {today}',className='bod'),style={'color':'#fff'}),
         dbc.Row(dbc.Col([html.H2(id='Total', children=Total,),html.H5('Facilities'), ],style={'height':'130px'},className='bod')),
         dbc.Row(dbc.Container(dcc.Graph(id='bar1', figure=bar1, config={'modeBarButtonsToRemove': ['zoom2d', 'pan2d', 'select2d', 'lasso2d', 'zoomIn2d', 'zoomOut2d', 'autoScale2d', 'resetScale2d']}),style={"maxHeight": "525px", "overflow": "auto"}),className='bo',),
-        dbc.Row(dbc.Col([html.Label(['Github: ', html.A('Sachimugu', href='#',)],style={'height':'25px'})],className='bod')),
+        dbc.Row(dbc.Col([html.Label(['Data-Source: ', html.A('https://hfr.health.gov.ng/', href='https://hfr.health.gov.ng/',)],style={'height':'25px'})],className='bod')),
     ]), width=3),
 ])])
 
