@@ -1,5 +1,5 @@
 # HEALTH CARE DASHBOARD
-![Confusion matrix](assets/db.png)
+![dashboard](assets/db.png)
 
 ##
 
