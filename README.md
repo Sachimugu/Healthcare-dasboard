@@ -1,6 +1,6 @@
 # HEALTH CARE DASHBOARD
 ![dashboard](assets/db.png)
-
+### https://hcdashborad.herokuapp.com/
 ##
 
 ### Run Locally
@@ -23,7 +23,7 @@ conda activate healthCaerDashboard
 ```
 ```bash
 #run app
-python app.py
+python dashboard.py
 ```
 Go to http://127.0.0.1:8081/ on browser
 
