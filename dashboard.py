@@ -192,9 +192,8 @@ x.insert(0, 'Total')
 #------------------------------------------------------------------------------
 #------------------------------------------------------------------------------
 
-app = dash.Dash( __name__,
-    external_stylesheets=[dbc.themes.CYBORG]
-)
+app = dash.Dash( __name__, external_stylesheets=[dbc.themes.CYBORG])
+server=app.server #for heroku
 
 app.layout = dbc.Container([
     dbc.Row( dbc.Col([html.H2(id='title',children='Health Care Dashboard',style={'color':'#ffffff'})],className='bod',style={'height':'60px',},),),
