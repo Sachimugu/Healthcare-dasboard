@@ -177,6 +177,7 @@ Nurses = f'{round((df1.Number_of_Nurses.sum())/1000)}K'
 allied_health = f'{round((df1.Number_of_other_Health_personels.sum())/1000)}K'
 Total = df1['No_of_facility'].sum()
 today = date.today()
+today = today.strftime("%d %b %Y")
 
 #------------------------------------------------------------------------------
 #------------------------------------------------------------------------------
@@ -196,7 +197,10 @@ app = dash.Dash( __name__, external_stylesheets=[dbc.themes.CYBORG])
 server=app.server #for heroku
 
 app.layout = dbc.Container([
-    dbc.Row( dbc.Col([html.H2(id='title',children='Health Care Dashboard',style={'color':'#ffffff'})],className='bod',style={'height':'60px',},),),
+    #dbc.Row( dbc.Col([ html.H3(id='title',children='Health Care Dashboard',style={'color':'#ffffff'})],className='bod',style={'height':'60px',},),]),),
+    dbc.Row( [dbc.Col([html.Img(src='assets/FMOH-Logo(1).png' ,style={'clear': 'right'}), html.H3(id='title',children='Healthcare Dashboard',className='titl'), ],className='bid'),]),
+
+    #dbc.Row( [dbc.Col([html.Img(src='assets/FMOH-Logo(1).png' ,style={'clear': 'right'}),]), dbc.Col([ html.H3(id='title',children='Health Care Dashboard',)],className='bid'),]),
     dbc.Row([
     dbc.Col([
         dbc.Row([
@@ -248,10 +252,10 @@ app.layout = dbc.Container([
                 ],className='bo',width=8),],),], width=9),
     dbc.Col(([
 
-        dbc.Row(dbc.Col(f'Date: {today}',className='bod'),style={'color':'#fff'}),
+        dbc.Row(dbc.Col(html.H5(f'{today}'),className='bod',style={'color':'#19d3f3'},)),
         dbc.Row(dbc.Col([html.H2(id='Total', children=Total,),html.H5('Facilities'), ],style={'height':'130px'},className='bod')),
         dbc.Row(dbc.Container(dcc.Graph(id='bar1', figure=bar1, config={'modeBarButtonsToRemove': ['zoom2d', 'pan2d', 'select2d', 'lasso2d', 'zoomIn2d', 'zoomOut2d', 'autoScale2d', 'resetScale2d']}),style={"maxHeight": "525px", "overflow": "auto"}),className='bo',),
-        dbc.Row(dbc.Col([html.Label(['Data-Source: ', html.A('https://hfr.health.gov.ng/', href='https://hfr.health.gov.ng/',)],style={'height':'25px'})],className='bod')),
+        dbc.Row(dbc.Col([html.Label([html.A('Data-Source', href='https://hfr.health.gov.ng/facilities/hospitals-list',)],style={'height':'25px'})],className='bod')),
     ]), width=3),
 ])])
 

@@ -2,13 +2,15 @@
 ### https://hcdashborad.herokuapp.com/
 
 ![dashboard](assets/db.png)
-##
+
+## Data Source
+Dataset used in building the dashboard was scaraped from the <a href = "https://hfr.health.gov.ng/facilities/hospitals-list">NIGERIA Health Facility Registry (HFR)</a> with Selenium. Explore scraping scripts <a href = 'https://github.com/Sachimugu/Health-care-dasboard/tree/master/Data%20collection'>here</a>
 
 ### Run Locally
 ![](https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black)
 
-1. Create a folder. 
-2. Open terminal in the created folder and run the following code one by one.
+1. Create a folder dashboard. 
+2. Open terminal and cd in dashboard.
 
 ```bash
 # clone the repo

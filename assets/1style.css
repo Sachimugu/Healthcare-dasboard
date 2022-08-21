@@ -1,9 +1,18 @@
+.tr{
+	margin-left: 10px;
+	
+}
 .bo{
 	background-color: #1a1a1a;
 	border: solid;
 	border-width: 1;
 	border-color: #060606;
 }
+.titl{margin-left: 10px;}
+
+.bid{display: flex;
+	justify-content: center;
+  	align-items: center;}
 
 .bod{
 	background-color: #1a1a1a;
